@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive eCommerce Home Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .product {
+        width: 80%;
+        background-color: bisque;
+        text-align: center;
+        padding: 1em 0;
+        border: 1px solid black;
+        border-radius: 2%;
+        margin: 1em;
+      }
+      button {
+        background-color: coral;
+        border: none;
+        color: black;
+        padding: 1em;
+      }
+      #products {
+        display: grid;
+        background-color: lightpink;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+        margin: auto;
+      }
+      @media screen and (max-width: 768px) {
+        .products {
+          grid-template-columns: auto auto;
+        }
+        .product {
+          width: 85%;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .products {
+          grid-template-columns: auto;
+        }
+        .product {
+          width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="products"></div>
+    </main>
+    <script>
+      fetch("products.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const productList = document.getElementById("products");
+
+          // Iterate over the products and generate HTML dynamically
+          data
+            .forEach((product) => {
+              const productItem = document.createElement("div");
+              productItem.classList.add("product");
+              productItem.innerHTML = `<img src=${product.image} height="100px" />
+                                    <h3>${product.name}</h3>
+                                    <p>Price: &#8377;${product.price}</p>
+                                    <button onclick="addToCart(${product.id})">Add to Cart</button>`;
+
+              productList.appendChild(productItem);
+            })
+            .catch((error) => console.error("Error fetching JSON:", error));
+        });
+
+      function addToCart(productId) {
+        let cart = localStorage.getItem("cart");
+        cart = cart ? JSON.parse(cart) : [];
+
+        // Check if the product is already in the cart
+        const existingProductIndex = cart.findIndex(
+          (item) => item.id === productId
+        );
+        if (existingProductIndex !== -1) {
+          // If product already exists, increase its quantity
+          cart[existingProductIndex].quantity++;
+        } else {
+          // If product doesn't exist, add it to the cart with quantity 1
+          cart.push({ id: productId, quantity: 1 });
+        }
+
+        // Store the updated cart data back into localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert("Product added to cart:", productId);
+      }
+    </script>
+  </body>
+</html>

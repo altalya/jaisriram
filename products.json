@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1001,
+    "name": "apple ",
+    "image": "images/apple.jpg",
+    "description": "package of 1 kg",
+    "price": 280
+  },
+  {
+    "id": 1002,
+    "name": "orange",
+    "image": "images/orange.jpg",
+    "description": "package of 1 kg",
+    "price": 120
+  },
+  {
+    "id": 1003,
+    "name": "grapes",
+    "image": "images/grapes.jpeg",
+    "description": "package of 1 kg",
+    "price": 70
+  },
+  {
+    "id": 1004,
+    "name": "Tender cococnut",
+    "image": "images/coconut.jpg",
+    "description": "1 medium sized tender coconut",
+    "price": 40
+  }
+]
