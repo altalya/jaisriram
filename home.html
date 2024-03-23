@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="common.css" />
     <style>
       body {
         margin: 0;
@@ -58,58 +58,65 @@
     </style>
   </head>
   <body>
-    <div id="nav"></div>
-    <div class="mainbanner">
-      <h1>
-        Exclusive<br />
-        Products
-      </h1>
-    </div>
-    <div id="about" class="container">
-      <div class="banner">
-        <img src="imgs/banner.jpg" alt="banner" width="100%" />
+    <div id="header"></div>
+    <section>
+      <div class="mainbanner">
+        <h1>
+          Exclusive<br />
+          Products
+        </h1>
       </div>
-      <div class="about">
-        <h1>About Us</h1>
-        <p>
-          Our commitment to quality craftsmanship and attention to detail
-          ensures that each hat in our collection is not just an accessory, but
-          a statement piece that adds flair to any ensemble. At my hat store, we
-          strive to provide exceptional customer service, ensuring that your
-          shopping experience is as enjoyable as wearing our hats. So browse
-          through our collection, find the perfect hat that speaks to you, and
-          step out in style with confidence.
-        </p>
+    </section>
+    <section>
+      <div id="about" class="container">
+        <div class="banner">
+          <img src="imgs/banner.jpg" alt="banner" width="100%" />
+        </div>
+        <div class="about">
+          <h1>About Us</h1>
+          <p>
+            Our commitment to quality craftsmanship and attention to detail
+            ensures that each hat in our collection is not just an accessory,
+            but a statement piece that adds flair to any ensemble. At my hat
+            store, we strive to provide exceptional customer service, ensuring
+            that your shopping experience is as enjoyable as wearing our hats.
+            So browse through our collection, find the perfect hat that speaks
+            to you, and step out in style with confidence.
+          </p>
+        </div>
       </div>
-    </div>
-    <div id="contact" class="container">
-      <h2>Contact Us</h2>
-      <div class="form-container">
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=systems@altalya.com&su=Subject&body=BodyText"
-          target="_blank"
-          >Send Email via Gmail</a
-        >
-        <p>
-          Email: <a href="mailto:racyramz@gmail.com">systems@altalya.com</a>
-        </p>
-        <p>Phone: <a href="tel:7560056003">7560056003</a></p>
+    </section>
+    <section>
+      <div id="contact" class="container">
+        <h2>Contact Us</h2>
+        <div class="form-container">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=systems@altalya.com&su=Subject&body=BodyText"
+            target="_blank"
+            >Send Email via Gmail</a
+          >
+          <p>
+            Email: <a href="mailto:racyramz@gmail.com">systems@altalya.com</a>
+          </p>
+          <p>Phone: <a href="tel:7560056003">7560056003</a></p>
+        </div>
       </div>
-    </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.2140061865966!2d77.34783551022711!3d11.097421989025987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba907be05328c5f%3A0xb0b2d233938cf6d4!2sGH-OP%20WARD-TIRUPUR!5e0!3m2!1sen!2sin!4v1711062048712!5m2!1sen!2sin"
-      width="600"
-      height="450"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.2140061865966!2d77.34783551022711!3d11.097421989025987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba907be05328c5f%3A0xb0b2d233938cf6d4!2sGH-OP%20WARD-TIRUPUR!5e0!3m2!1sen!2sin!4v1711062048712!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
     <script>
-      fetch("index.html")
+      //import header
+      fetch("header.html")
         .then((res) => res.text())
         .then((data) => {
-          document.getElementById("nav").innerHTML = data;
+          document.getElementById("header").innerHTML = data;
         });
 
       document

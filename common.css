@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
 }
 header {
@@ -46,7 +47,6 @@ a:link {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  width: 300px;
 }
 
 .form-container h2 {
@@ -68,4 +68,10 @@ a:link {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    width: 80vw;
+  }
 }
